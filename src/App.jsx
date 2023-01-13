@@ -11,9 +11,9 @@ function App() {
     return (
         <div className="App w-11/12 flex m-auto flex-col h-full min-h-screen">
             <Header text="To Do"/>
-            <Todos />
+            <Todos/>
             {/*<FormInput type="text" name="Name" id="name" placeholder="Alexis Rojas"/>*/}
-            <Footer />
+            <Footer/>
         </div>
     )
 }
