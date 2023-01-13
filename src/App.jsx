@@ -12,7 +12,7 @@ function App() {
         <div className="App w-11/12 flex m-auto flex-col h-full min-h-screen">
             <Header text="To Do"/>
             <Todos/>
-            {/*<FormInput type="text" name="Name" id="name" placeholder="Alexis Rojas"/>*/}
+            <FormInput type="text" name="Name" id="name"/>
             <Footer/>
         </div>
     )
