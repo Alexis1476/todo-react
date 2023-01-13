@@ -1,19 +1,18 @@
 import FormInput from "./FormInput.jsx";
 
-function Todos(props) {
+function Todos({todos}) {
     return (
         <ul className="grow">
-            <Todo/>
-            {/*TODO : Todos*/}
+            {todos.map(todo => <Todo name={todo.name}/>)}
         </ul>
     )
 }
 
-function Todo() {
+function Todo({name}) {
     return (
-        <li className="bg-primary rounded-md text-white px-4 py-2 flex">
+        <li className="bg-primary rounded-md text-white px-4 py-2 mb-2 flex">
             {/* TODO : Add Key*/}
-            <strong>Tâche 1</strong>
+            <strong>{name}</strong>
         </li>
     )
 }
