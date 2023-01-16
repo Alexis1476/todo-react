@@ -1,5 +1,3 @@
-import FormInput from "./FormInput.jsx";
-
 function Todos({todos}) {
     return (
         <ul className="grow">

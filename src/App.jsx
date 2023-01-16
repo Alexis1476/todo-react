@@ -1,35 +1,22 @@
 import React, {useState} from 'react'
 import './App.css'
-import FormInput from './components/FormInput.jsx'
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Todos from "./components/Todos.jsx";
-import FormButton from "./components/FormButton.jsx";
+import TodoForm from "./components/TodoForm.jsx";
 
-class App extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            todos: [
-                {name: 'Task1'},
-                {name: 'Task2'}
-            ]
-        }
-    }
+function App() {
+    const [todos, setTodos] = useState([{name: 'Task1'}]);
+    const addTask = (value) => setTodos([...todos, {name: value}])
 
-    render() {
-        const todos = this.state.todos
-
-        return (
-            <div className="App w-11/12 flex m-auto flex-col h-full min-h-screen">
-                <Header text="To Do"/>
-                <Todos todos={todos}/>
-                <FormInput type="text" name="Name" id="name"/>
-                <FormButton name="Add"/>
-                <Footer/>
-            </div>
-        )
-    }
+    return (
+        <div className="App w-11/12 flex m-auto flex-col h-full min-h-screen">
+            <Header text="To Do"/>
+            <Todos todos={todos}/>
+            <TodoForm addTask={addTask}/>
+            <Footer/>
+        </div>
+    )
 }
 
 export default App
