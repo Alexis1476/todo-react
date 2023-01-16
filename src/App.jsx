@@ -11,11 +11,9 @@ function App() {
         setTodos(copy)
     }
     const handleToggle = (id) => {
-        console.log(id)
         let mapped = todos.map((task) => {
             return task.id === Number(id) ? {...task, completed: !task.completed} : {...task}
         })
-        console.log(todos);
         setTodos(mapped)
     }
     const handleFilter = (e) => {
