@@ -25,8 +25,9 @@ function TodoForm({addTask}) {
                        className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-primary  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Name</label>
             </div>
             <button
+                type='button'
                 onClick={handleSubmit}
-                className={`p-2 px-4 text-white flex br-2 rounded-2xl bg-primary w-fit mx-auto hover:opacity-70`}>Add
+                className={`m-2 p-2 px-4 text-white flex br-2 rounded-2xl bg-primary w-fit mx-auto hover:opacity-70`}>Add
             </button>
         </>
     )
