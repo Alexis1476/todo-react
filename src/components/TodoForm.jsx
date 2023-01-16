@@ -3,7 +3,6 @@ import {useState} from "react";
 function TodoForm({addTask}) {
     const [input, setInput] = useState('');
     const handleSubmit = (e) => {
-        e.preventDefault();
         addTask(input);
         setInput("");
     }
@@ -14,6 +13,10 @@ function TodoForm({addTask}) {
                        value={input}
                        onChange={(e) => {
                            setInput(e.currentTarget.value)
+                       }}
+                       onKeyDown={(e) => {
+                           if (e.key === 'Enter')
+                               handleSubmit(e)
                        }}
                        className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-700 bg-transparent rounded-lg border-2
                     border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
