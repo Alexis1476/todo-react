@@ -1,7 +1,8 @@
-function Todo({todo}) {
+function Todo({todo, handleToggle}) {
     return (
-        <li className="bg-primary rounded-md text-white px-4 py-2 mb-2 flex">
-            <input type="checkbox" className="mr-2"/>
+        <li id={todo.id}
+            className={`rounded-md text-white px-4 py-2 mb-2 flex ${todo.completed ? 'bg-black' : 'bg-primary'}`}
+            onClick={(e) => handleToggle(e.currentTarget.id)}>
             <strong>{todo.name}</strong>
         </li>
     )
