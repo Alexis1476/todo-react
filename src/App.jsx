@@ -18,11 +18,16 @@ function App() {
         console.log(todos);
         setTodos(mapped)
     }
+    const handleFilter = (e) => {
+        let filtered = todos.filter((task) => !task.completed)
+        setTodos(filtered)
+    }
     return (
         <div className="App w-11/12 flex m-auto flex-col h-full min-h-screen max-w-2xl">
             <Header text="To Do"/>
             <Todos todos={todos} handleToggle={handleToggle}/>
             <TodoForm addTask={addTask}/>
+            <button onClick={handleFilter}>Clear</button>
             <Footer/>
         </div>
     )
