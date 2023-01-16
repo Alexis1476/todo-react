@@ -14,7 +14,7 @@ const tasks = [
 function App() {
     const [todos, setTodos] = useState(tasks);
     const addTask = (value) => {
-        let copy = [...todos, {name: value}]
+        let copy = [...todos, {id: todos.length + 1, name: value}]
         setTodos(copy)
     }
 

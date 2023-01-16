@@ -1,8 +1,8 @@
-function Todo({id, name}) {
+function Todo({todo}) {
     return (
-        <li className="bg-primary rounded-md text-white px-4 py-2 mb-2 flex" key={id}>
+        <li className="bg-primary rounded-md text-white px-4 py-2 mb-2 flex">
             <input type="checkbox" className="mr-2"/>
-            <strong>{name}</strong>
+            <strong>{todo.name}</strong>
         </li>
     )
 }
