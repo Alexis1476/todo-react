@@ -5,9 +5,18 @@ import Footer from "./components/Footer.jsx";
 import Todos from "./components/Todos.jsx";
 import TodoForm from "./components/TodoForm.jsx";
 
+const tasks = [
+    {id: 1, name: 'Task1'},
+    {id: 2, name: 'Task2'},
+    {id: 3, name: 'Task3'},
+]
+
 function App() {
-    const [todos, setTodos] = useState([]);
-    const addTask = (value) => setTodos([...todos, {name: value}])
+    const [todos, setTodos] = useState(tasks);
+    const addTask = (value) => {
+        let copy = [...todos, {name: value}]
+        setTodos(copy)
+    }
 
     return (
         <div className="App w-11/12 flex m-auto flex-col h-full min-h-screen max-w-2xl">

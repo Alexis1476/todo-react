@@ -3,6 +3,8 @@ import {useState} from "react";
 function TodoForm({addTask}) {
     const [input, setInput] = useState('');
     const handleSubmit = (e) => {
+        if (!input)
+            return null;
         addTask(input);
         setInput("");
     }
