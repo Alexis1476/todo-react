@@ -1,8 +1,10 @@
-function Button({href = '#', title, img, className}) {
+function Button({text = 'Button', type = 'button', onClick, className}) {
     return (
-        <a href={href} title={title} className={`p-6 flex br-2 rounded-2xl hover:opacity-70 ${className}`}>
-            <img src={img} alt=""/>
-        </a>
+        <button
+            type={type}
+            onClick={onClick}
+            className={`m-2 p-2 px-4 text-white flex br-2 rounded-2xl w-fit mx-auto hover:opacity-70 ${className}`}>{text}
+        </button>
     )
 }
 
