@@ -8,8 +8,16 @@ import Button from "./components/Button.jsx";
 function App() {
     const [todos, setTodos] = useState([]);
     const addTask = (value) => {
-        let copy = [...todos, {id: todos.length + 1, name: value}]
+        let copy = [...todos, {id: todos.length + 1, name: value, completed: false}]
         setTodos(copy)
+    }
+    const editTodo = (id, newName) => {
+        let filtered = todos.map((todo) => {
+            if (todo.id === id)
+                return {...todo, name: newName}
+            return todo
+        })
+        setTodos(filtered)
     }
     const handleToggle = (id) => {
         let mapped = todos.map((task) => {
@@ -24,7 +32,7 @@ function App() {
     return (
         <div className="App w-11/12 flex m-auto flex-col h-full min-h-screen max-w-2xl">
             <Header text="To Do"/>
-            <Todos todos={todos} handleToggle={handleToggle}/>
+            <Todos todos={todos} handleToggle={handleToggle} editTodo={editTodo}/>
             <TodoForm addTask={addTask}/>
             <Button onClick={handleFilter} text="Clear" className="bg-red-700"/>
             <Footer/>
