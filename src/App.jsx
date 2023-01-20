@@ -19,6 +19,10 @@ function App() {
         })
         setTodos(filtered)
     }
+    const deleteTodo = (id) => {
+        let filtered = todos.filter((todo) => id !== todo.id)
+        setTodos(filtered)
+    }
     const handleToggle = (id) => {
         let mapped = todos.map((task) => {
             return task.id === Number(id) ? {...task, completed: !task.completed} : {...task}
@@ -32,7 +36,7 @@ function App() {
     return (
         <div className="App w-11/12 flex m-auto flex-col h-full min-h-screen max-w-2xl">
             <Header text="To Do"/>
-            <Todos todos={todos} handleToggle={handleToggle} editTodo={editTodo}/>
+            <Todos todos={todos} handleToggle={handleToggle} editTodo={editTodo} deleteTodo={deleteTodo}/>
             <TodoForm addTask={addTask}/>
             <Button onClick={handleFilter} text="Clear" className="bg-red-700"/>
             <Footer/>

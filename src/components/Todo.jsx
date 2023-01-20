@@ -1,7 +1,7 @@
 import Button from "./Button.jsx";
 import {useState} from "react";
 
-function Todo({todo, handleToggle, handleEdit}) {
+function Todo({todo, handleToggle, handleEdit, handleDelete}) {
     const [isEditing, setEditing] = useState(false)
     const [input, setInput] = useState('')
     const handleSubmit = (e) => {
@@ -38,7 +38,7 @@ function Todo({todo, handleToggle, handleEdit}) {
             </div>
             <div className="flex space-x-2">
                 <Button onClick={() => setEditing(true)} type="button" className="bg-gray-500" text="Edit"/>
-                <Button type="button" className="bg-gray-500" text="Delete"/>
+                <Button onClick={() => handleDelete(todo.id)} type="button" className="bg-gray-500" text="Delete"/>
             </div>
         </li>
     )
